@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="index"><img src="../../../assets/LOGO.png" alt="Logo M28 - On Board" width="75vh" height="75vw"></a>
+      <div>
+        <a class="btn btn-outline-danger" routerLink="login" *ngIf="!loggedIn">Inicia Sesión</a>
+        <div ngbDropdown class="dropdown d-flex" *ngIf="loggedIn">
+          <button ngbDropdownToggle class="btn btn-outline-danger" type="button" id="profile" aria-expanded="false">
+        {{ username }}
+        </button>
+          <ul ngbDropdownMenu aria-labelledby="profile">
+            <li><a class="dropdown-item" href="#" (click)="logout($event)">Cierra Sesión</a></li>
+            <li><a class="dropdown-item" routerLink="profile">Ir al Perfil</a></li>
+          </ul>
+        </div>        
+      </div>
+    </div>
+  </nav>
